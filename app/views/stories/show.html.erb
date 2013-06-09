@@ -1,0 +1,23 @@
+<p id="notice"><%= notice %></p>
+
+<h1><%= @story.title %></h1>
+
+
+<p>
+  <%= @story.body %>
+</p>
+
+<p>
+  <b>Author:</b>
+  <%=Author.find_by_id(@story.author_id).name%>
+</p>
+
+<p>
+
+  <%=@story.comments.each  do |n|
+       n.body
+      end %>
+<p>
+
+<%= link_to 'Edit', edit_story_path(@story) %> |
+<%= link_to 'Back', stories_path %>
