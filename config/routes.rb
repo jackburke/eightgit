@@ -6,11 +6,9 @@ Spice::Application.routes.draw do
   resources :authors
 
 
-  resources :stories
-
-
-  resources :comments
-
+  resources :stories do
+    resources :comments
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

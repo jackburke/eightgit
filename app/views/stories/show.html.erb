@@ -1,23 +1,11 @@
-<p id="notice"><%= notice %></p>
+<%= render @story %>
 
-<h1><%= @story.title %></h1>
+<h3><Comments</h3>
+<div id="comments">
+  <%= render @story.comments %>
+<div>
 
+<%= render :file => 'comments/new' %>
 
-<p>
-  <%= @story.body %>
-</p>
-
-<p>
-  <b>Author:</b>
-  <%=Author.find_by_id(@story.author_id).name%>
-</p>
-
-<p>
-
-  <%=@story.comments.each  do |n|
-       n.body
-      end %>
-<p>
-
-<%= link_to 'Edit', edit_story_path(@story) %> |
-<%= link_to 'Back', stories_path %>
+<%#= link_to 'Edit', edit_story_path(@story) %> |
+<%#= link_to 'Back', stories_path %>
