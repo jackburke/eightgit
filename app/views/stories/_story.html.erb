@@ -1,11 +1,11 @@
 <%= div_for story do %>
   <h3>
   <%= link_to story.title, story %>
-  <%= link_to story.author_id, story %>
+  <%= link_to Author.find_by_id(story.author_id).name, story %>
   <span class='action'>
-     <%= link_to "Edit", edit_story_path(story) %>
-     <%= link_to "Delete", story, :confirm => "Are you sure?",
-   :method => :delete %>
+     <%#= link_to "Edit", edit_story_path(story) %>
+     <%#= link_to "Delete", story, :confirm => "Are you sure?",
+    :method => :delete %>
       </span>
    </h3>
    <%=story.body %>
