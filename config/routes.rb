@@ -1,9 +1,15 @@
 Spice::Application.routes.draw do
-  root :to => 'stories#index'
+
+
+  root :to => 'welcomes#hello'
   resources :users
 
 
   resources :authors
+  get '/sessions/new' =>'Sessions#new', as: 'new_session'
+  post '/sessions' =>  'Sessions#create', as: 'sessions'
+  delete '/sessions' => 'Sessions#destroy', as: 'session'
+  match "auth/:provider/callback" => "Sessions#create"
 
 
   resources :stories do
