@@ -10,6 +10,7 @@ class StoriesController < ApplicationController
     end
   end
 
+
   # GET /stories/1
   # GET /stories/1.json
   def show
@@ -20,6 +21,7 @@ class StoriesController < ApplicationController
       format.json { render json: @story }
     end
   end
+
 
   # GET /stories/new
   # GET /stories/new.json
